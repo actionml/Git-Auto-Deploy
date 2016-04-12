@@ -14,14 +14,23 @@
 NAME="git-auto-deploy"
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="GitAutodeploy"
-DAEMON="/usr/bin/env python /opt/Git-Auto-Deploy/gitautodeploy"
-DAEMON_UID=root
-DAEMON_GID=root
+# pferrel changed to us symlink
+#DAEMON="/usr/bin/env python /opt/Git-Auto-Deploy/gitautodeploy"
+DAEMON="/usr/bin/env python /usr/local/git-auto-deploy/gitautodeploy"
+# pferrel using aml user
+#DAEMON_UID=root
+#DAEMON_GID=root
+DAEMON_UID=aml
+DAEMON_GID=aml
 RUNDIR=/var/run/$NAME
 PIDFILE=/var/run/$NAME.pid
-PWD=/opt/Git-Auto-Deploy/
-OPTIONS="--daemon-mode --quiet --pid-file /var/run/git-auto-deploy.pid --log-file /var/log/git-auto-deploy.log"
-USER=root
+# pferrel using symlinks
+#PWD=/opt/Git-Auto-Deploy/
+PWD=/usr/local/git-auto-deploy/
+OPTIONS="--daemon-mode --quiet --pid-file /usr/local/git-auto-deploy/git-auto-deploy.pid --log-file /var/log/git-auto-deploy/git-auto-deploy.log"
+#pferrel using aml user to get it's ssh key
+#USER=root
+USER=aml
 SCRIPTNAME=/etc/init.d/$NAME
 
 # Exit if the package is not installed
