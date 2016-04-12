@@ -1,3 +1,9 @@
+# Mods to root repo
+
+ - runs as a user instead of root
+ - allows the pid to be saved in /usr/local/git-auto-deploy
+ - config setup to use github ssh deployment and deploy keys for good security
+
 # What is it?
 
 Git-Auto-Deploy consists of a small HTTP server that listens for Web hook requests sent from GitHub, GitLab or Bitbucket servers. This application allows you to continuously and automatically deploy you projects each time you push new commits to your repository.</p>
