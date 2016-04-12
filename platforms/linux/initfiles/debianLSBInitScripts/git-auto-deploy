@@ -22,8 +22,11 @@ DAEMON="/usr/bin/env python /usr/local/git-auto-deploy/gitautodeploy"
 #DAEMON_GID=root
 DAEMON_UID=aml
 DAEMON_GID=aml
-RUNDIR=/var/run/$NAME
-PIDFILE=/var/run/$NAME.pid
+# pferrel running as user aml so not using /var/run
+#RUNDIR=/var/run/$NAME
+#PIDFILE=/var/run/$NAME.pid
+RUNDIR=/usr/local/git-auto-deploy/
+PIDFILE=/usr/local/git-auto-deploy/git-auto-deploy.pid
 # pferrel using symlinks
 #PWD=/opt/Git-Auto-Deploy/
 PWD=/usr/local/git-auto-deploy/
